@@ -1,3 +1,41 @@
+Steps to run WordCount Program on Hadoop:
+1.	Make sure Hadoop and Java are installed properly
+hadoop version
+javac -version
+
+2.	Create a directory on the Desktop named Lab and inside it create two folders; one called “Input” and the other called “tutorial_classes”. 
+[You can do this step using GUI normally or through terminal commands] 
+cd Desktop
+mkdir Lab
+mkdir Lab/Input
+mkdir Lab/tutorial_classes
+
+3.	Add the file attached with this document “WordCount.java” in the directory Lab
+
+4.	Add the file attached with this document “input.txt” in the directory Lab/Input. 
+
+5.	Type the following command to export the hadoop classpath into bash.
+export HADOOP_CLASSPATH=$(hadoop classpath)
+Make sure it is now exported. 
+echo $HADOOP_CLASSPATH
+6.	It is time to create these directories on HDFS rather than locally. Type the following commands.
+hadoop fs -mkdir /WordCountTutorial 
+hadoop fs -mkdir /WordCountTutorial/Input
+hadoop fs -put Lab/Input/input.txt /WordCountTutorial/Input
+7.	Go to localhost:9870 from the browser, Open “Utilities → Browse File System” and you should see the directories and files we placed in the file system. 
+8.	Then, back to local machine where we will compile the WordCount.java file. Assuming we are currently in the Desktop directory.
+cd Lab
+javac -classpath $HADOOP_CLASSPATH -d tutorial_classes WordCount.javaPut the output files in one jar file (There is a dot at the end)
+jar -cvf WordCount.jar -C tutorial_classes .
+
+9.	Now, we run the jar file on Hadoop.
+hadoop jar WordCount.jar WordCount /WordCountTutorial/Input /WordCountTutorial/Output
+
+10.	 Output the result:
+hadoop dfs -cat /WordCountTutorial/Output/*
+
+
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
