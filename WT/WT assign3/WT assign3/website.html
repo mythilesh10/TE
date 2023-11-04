@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mighty Football Club</title>
+    <link rel="stylesheet" type="text/css" href="Web.css">
+</head>
+
+<body>
+    <header>
+        <h1>Turf Teams</h1>
+        <nav>
+            <a>Home</a>
+            <a href="https://www.fcbarcelona.com/en/">Teams</a>
+            <a href="https://www.footballhistory.org/">History of football</a>
+            <a href="https://en.wikipedia.org/wiki/Sunil_Chhetri" target="_blank">Ultimate Players</a>
+            <a href ="Newpag.html" target="blank">Registration</a>
+
+            </a>
+        </nav>
+    </header>
+    <main>
+        <aside class="left">
+            <a href="https://www.freedomfromtorture.org/sites/default/files/images/2019-06/FFT%2032%20181029PAFC.jpg"><img src="https://www.freedomfromtorture.org/sites/default/files/images/2019-06/FFT%2032%20181029PAFC.jpg" alt="Creative Common Ultimate Photo" title="By Ed Yourdon [CC BY-SA 2.0 (http://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons"
+                /> </a>
+
+            <a href="https://ichef.bbci.co.uk/onesport/cps/480/cpsprodpb/7ADD/production/_103235413_rubenloftus-cheek.jpg"><img src="https://ichef.bbci.co.uk/onesport/cps/480/cpsprodpb/7ADD/production/_103235413_rubenloftus-cheek.jpg" /></a>
+
+            <a href="https://www.walkingfootball.info/wp-content/uploads/2020/04/Playing-walking-football-3.jpg" title="Ultimate Frisbee"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.3djYFSdAkHYk32lKSXWvdQHaEp%26pid%3DApi&f=1&ipt=306918726cf61485f6be07112c37a7d500a4ceb8f09fbc58938e37794b1012c9&ipo=images" alt="Ultimate Frisbee"></a>
+        </aside>
+        <section class="right">
+            <h2>Pune Teams</h2>
+            <p>This displays the different football teams in Pune.</p>
+            <script>
+                function validateform() {
+    var name = document.myform.name.value;
+    var email = document.myform.email.value;
+    var password = document.myform.password.value;
+
+    if (name == null || name == "") {
+        alert("Name can't be blank");
+        return false;
+    } else if (!/^[a-zA-Z ]{2,30}$/.test(name)) {
+        alert("Name should only contain letters and be 2 to 30 characters long.");
+        return false;
+    }
+
+    if (email == null || email == "") {
+        alert("Email can't be blank");
+        return false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+        alert("Invalid email address");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/.test(password)) {
+        alert("Password must contain at least one uppercase letter, one lowercase letter, one digit, and be at least 6 characters long.");
+        return false;
+    }
+}
+
+            </script>
+
+            <body>
+                <form name="myform" method="post" action="abc.jsp" onsubmit="return validateform()">
+                    Name: <input type="text" name="name"><br/> Password: <input type="password" name="password"><br/>
+                    <input type="submit" value="register">
+                </form>
+                <table>
+                    <tr>
+                        <th>Team Name</th>
+                        <th>Location</th>
+                        <th>League Type</th>
+                    </tr>
+                    <tr>
+                        <td>Minerva FC</td>
+                        <td>Kothrud</td>
+                        <td>Men's</td>
+                    </tr>
+                    <tr>
+                        <td>Nutmeggers</td>
+                        <td>Sinhagad Road</td>
+                        <td>Women's</td>
+                    </tr>
+                    <tr>
+                        <td>Vision FC</td>
+                        <td>Vadgaon</td>
+                        <td>Men's</td>
+
+                    </tr>
+                    <tr>
+                        <td>7 Star Club</td>
+                        <td>Dhayari</td>
+                        <td>both</td>
+                    </tr>
+                    <tr>
+                        <td>Pune City FC</td>
+                        <td>Virginia</td>
+                        <td>Men's</td>
+                    </tr>
+                    <tr>
+                        <td>Green Box Stunners</td>
+                        <td>Suncity </td>
+                        <td>Women's</td>
+                    </tr>
+                    <tr>
+                        <td>Super Strikers</td>
+                        <td>Koregaon Park</td>
+                        <td>Men's</td>
+                    </tr>
+                    <tr>
+                        <td>Superfly</td>
+                        <td>Kondhwa</td>
+                        <td>Men's</td>
+                    </tr>
+                </table>
+        </section>
+    </main>
+
+    </body>
+
+</html>
