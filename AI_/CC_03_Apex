@@ -1,0 +1,84 @@
+After signing up go to Setup and click on Developer Console. 
+
+
+Now, in Developer Console click on File -> New -> Apex Class and Name it as Demo1
+
+Note: If your Apex Class is disabled then signup through the given link: https://developer.salesforce.com/signup
+
+
+1. Write the code to create an account.
+
+
+public class Demo1{
+    public void CreateAccount(String Name, String Phone){
+        account acc = new account();
+        acc.Name =Name;
+        acc.Phone = Phone;
+        insert acc;
+        System.debug('Account has been inserted: '+acc.name);
+    }
+}
+
+Do not forget to save it.
+
+
+Click on Debug -> Open Execute Anonymous Window and write the code and then Execute it.
+
+Demo1 acc=new Demo1();
+acc.CreateAccount('Mithi','763849020');
+
+You can see the record has been successfully added.
+
+
+Similarly, you can add number of records. To retrieve the records go to Query Editor and type the query language and Execute it. 
+
+
+You can see the records added.
+
+
+
+2. Write the code to update the account.
+
+Follow the same steps: File -> New -> Apex Class and name it as Demo2.
+
+public class Demo2{
+    public void UpdateOlderAccount(String Name){
+        List<Account>oldAccounts =new List<Account>();
+        for(Account acc: [SELECT Name from Account WHERE Phone='7769827215']){
+            acc.Name = Name;
+            oldAccounts.add(acc);
+            System.debug('Account has been updated ' + acc.name);
+    
+        }
+        update oldAccounts;
+    }
+}
+
+
+Again click on Debug -> Open Execute Anonymous Window and write the code.
+
+
+To view the records in Salesforce 
+
+3. Write the code to delete the records.
+Follow the above steps: File -> New -> Apex Class and name it as Demo3. 
+
+public class Demo3{
+    public void DeleteAccount(){
+        List<Account>oldAccounts =new List<Account>();
+        for(Account acc:[select Name,Phone from Account where Name='Smita']){
+            delete acc;
+            System.debug('Account deleted: ' +acc.name);
+        }
+        update oldAccounts;
+    }
+}
+
+Again click on Debug -> Open Execute Anonymous Window and write the code.
+
+Demo3 acc = new Demo3();
+acc.DeleteAccount();
+
+To view the records in Salesforce go to Setup and search for Accounts and click on it.
+
+
